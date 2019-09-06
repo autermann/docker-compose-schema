@@ -1,0 +1,168 @@
+type: object
+properties:
+  build:
+    $ref: build-context.yml
+  cap_add:
+    type: array
+    items:
+      type: string
+  cap_drop:
+    type: array
+    items:
+      type: string
+  cgroup_parent:
+    type: string
+  command:
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  configs:
+    $ref: service-configs.yml
+  credential_spec:
+    oneOf:
+      - type: object
+        required:
+          - file
+        properties:
+          file:
+            type: string
+      - type: object
+        required:
+          - registry
+        properties:
+          registry:
+            type: string
+  deploy:
+    $ref: deploy-config.yml
+  devices:
+    type: array
+    items:
+      type: string
+  depends_on:
+    type: array
+    items:
+      type: string
+  dns:
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  dns_search:
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  entrypoint:
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  env_file:
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  environment:
+    oneOf:
+      - type: array
+        items:
+          type: string
+      - type: object
+        additionalProperties:
+          type: string
+  expose:
+    type: array
+    items:
+      oneOf:
+        - type: string
+        - type: integer
+  external_links:
+    type: array
+    items:
+      type: string
+  extra_hosts:
+    type: array
+    items:
+      type: string
+  healthcheck:
+    $ref: health-check.yml
+  image:
+    type: string
+  init:
+    type: boolean
+  isolation:
+    $ref: isolation-mode.yml
+  labels:
+    $ref: labels.yml
+  links:
+    type: array
+    items:
+      type: string
+  logging:
+    $ref: logging-config.yml
+  network_mode:
+    type: string
+  networks:
+    type: array
+    items: 
+      $ref: network-config.yml
+  pid:
+    type: string
+  ports:
+    $ref: port-mapping.yml
+  restart:
+    $ref: restart-policy.yml
+  secrets:
+    $ref: service-secrets.yml
+  security_opt:
+    type: array
+    items:
+      type: string
+  stop_grace_period:
+    type: string
+  stop_signal:
+    type: string
+  sysctls:
+    oneOf:
+      - type: array
+        items:
+          type: string
+      - type: object
+        additionalProperties:
+          type: string
+  tmpfs:
+    $ref: tmpfs-config.yml
+  ulimits:
+    $ref: ulimits.yml
+  userns_mode:
+    type: string
+  volumes:
+    type: array
+    items:
+      $ref: volume-config.yml
+  domainname:
+    type: string
+  hostname:
+    type: string
+  ipc:
+    type: string
+  mac_address:
+    type: string
+  privileged:
+    type: boolean
+  read_only:
+    type: boolean
+  shm_size:
+    type: string
+  stdin_open:
+    type: boolean
+  tty:
+    type: boolean
+  working_dir:
+    type: string

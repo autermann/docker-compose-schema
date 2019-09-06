@@ -1,0 +1,12 @@
+oneOf:
+  - type: string
+  - type: object
+    additionalProperties:
+      aliases:
+        type: array
+        items:
+          type: string
+      ipv4_address:
+        type: string
+      ipv6_address:
+        type: string

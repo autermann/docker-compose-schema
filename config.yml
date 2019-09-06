@@ -1,0 +1,14 @@
+oneOf:
+  - type: object
+    properties:
+      file:
+        type: string
+  - type: object
+    properties:
+      external:
+        oneOf:
+          - type: boolean
+          - type: object
+            properties:
+              name:
+                type: string

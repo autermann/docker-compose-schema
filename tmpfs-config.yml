@@ -1,0 +1,22 @@
+oneOf:
+  - type: string
+  - type: array
+    items:
+      oneOf:
+        - type: string
+        - type: object
+          required:
+            - type
+            - target
+          properties:
+            type:
+              type: string
+              enum:
+                - tmpfs
+            target:
+              type: string
+            tmpfs:
+              type: object
+              properties:
+                size:
+                  type: integer

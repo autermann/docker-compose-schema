@@ -1,0 +1,6 @@
+type: string
+enum:
+  - "no"
+  - always
+  - on-failure
+  - unless-stopped

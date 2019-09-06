@@ -1,0 +1,40 @@
+oneOf:
+  - type: string
+  - type: object
+    properties:
+      name:
+        type: string
+      driver:
+        type: string
+        enum:
+          - overlay
+          - bridge
+          - host
+          - none
+      driver_opts:
+        type: object
+        additionalProperties:
+          oneOf:
+            - string
+            - number
+            - boolean
+      attachable:
+        type: boolean
+      ipam:
+        type: object
+        properties:
+          driver:
+            type: string
+          config:
+            type: array
+            items:
+              type: object
+              properties:
+                subnet:
+                  type: string
+      internal:
+        type: boolean
+      external:
+        type: boolean
+      labels:
+        $ref: labels.yml

@@ -1,0 +1,26 @@
+type: object
+required:
+- version
+properties:
+  version:
+    type: string
+  services:
+    type: object
+    additionalProperties:
+      $ref: service.yml
+  networks:
+    type: object
+    additionalProperties:
+      $ref: network.yml
+  volumes:
+    type: object
+    additionalProperties:
+      $ref: volume.yml
+  configs:
+    type: object
+    additionalProperties:
+      $ref: config.yml
+  secrets:
+    type: object
+    additionalProperties:
+      $ref: secret.yml

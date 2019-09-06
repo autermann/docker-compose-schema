@@ -1,0 +1,20 @@
+type: object
+properties:
+  endpoint_mode:
+    $ref: deploy-endpoint-mode.yml
+  labels:
+    $ref: labels.yml
+  mode:
+    $ref: deploy-mode.yml
+  placement:
+    $ref: deploy-placement.yml
+  replicas:
+    type: integer
+  resources:
+    $ref: deploy-resources.yml
+  restart_policy:
+    $ref: deploy-restart-policy.yml
+  rollback_config:
+    $ref: deploy-rollback-config.yml
+  update_config:
+    $ref: deploy-update-config.yml

@@ -1,0 +1,14 @@
+type: object
+properties:
+  condition:
+    type: string
+    enum:
+      - none
+      - on-failure
+      - any
+  delay:
+    type: string
+  max_attempts:
+    type: integer
+  window:
+    type: string

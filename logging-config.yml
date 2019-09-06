@@ -1,0 +1,12 @@
+type: object
+properties:
+  driver:
+    type: string
+    enum:
+      - json-file
+      - syslog
+      - none
+  options:
+    type: object
+    additionalProperties:
+      type: string

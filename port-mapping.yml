@@ -1,0 +1,18 @@
+oneOf:
+  - type: string
+  - type: object
+    properties:
+      target:
+        type: integer
+      published:
+        type: integer
+      protocol:
+        type: string
+        enum:
+          - tcp
+          - udp
+      mode:
+        type: string
+        enum:
+          - host
+          - ingress

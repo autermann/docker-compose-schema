@@ -1,0 +1,52 @@
+oneOf:
+  - type: string
+  - allOf:
+      - type: object
+        required:
+          - target
+          - type
+        properties:
+          type:
+            type: string
+          consistency:
+            type: string
+            enum:
+              - consistent
+              - cached
+              - delegated
+          target:
+            type: string
+          read_only:
+            type: boolean
+      - oneOf:
+          - properties:
+              type:
+                enum:
+                  - volume
+              source:
+                type: string
+              volume:
+                type: object
+                properties:
+                  nocopy:
+                    type: boolean
+          - properties:
+              type:
+                enum:
+                  - bind
+              source:
+                type: string
+              bind:
+                type: object
+                properties:
+                  propagation:
+                    type: string
+          - properties:
+              type:
+                enum:
+                  - tmpfs
+              tmpfs:
+                type: object
+                properties:
+                  size:
+                    type: integer

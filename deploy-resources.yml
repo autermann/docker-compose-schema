@@ -1,0 +1,16 @@
+type: object
+properties:
+  limits:
+    type: object
+    properties:
+      cpus:
+        type: string
+      memory:
+        type: string
+  reservations:
+    type: object
+    properties:
+      cpus:
+        type: string
+      memory:
+        type: string

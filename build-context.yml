@@ -1,0 +1,28 @@
+oneOf:
+  - type: string
+  - type: object
+    properties:
+      context:
+        type: string
+      dockerfile:
+        type: string
+      args:
+        oneOf:
+          - type: array
+            items:
+              type: string
+          - type: object
+            additionalProperties:
+              type: string
+      cache_from:
+        type: array
+        items:
+          type: string
+      labels:
+        $ref: labels.yml
+      shm_size:
+        oneOf:
+          - type: string
+          - type: number
+      target:
+        type: string

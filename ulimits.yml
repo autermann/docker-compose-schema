@@ -1,0 +1,10 @@
+type: object
+additionalProperties:
+  oneOf:
+    - type: integer
+    - type: object
+      properties:
+        soft:
+          type: integer
+        hard:
+          type: integer

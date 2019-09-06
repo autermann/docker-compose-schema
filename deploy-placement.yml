@@ -1,0 +1,15 @@
+type: object
+properties:
+  constraints:
+    type: array
+    items:
+      type: string
+  preferences:
+    type: array
+    items:
+      type: object
+      required:
+        - spread
+      properties:
+        spread:
+          type: string

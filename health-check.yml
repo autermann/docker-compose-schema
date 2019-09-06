@@ -1,0 +1,16 @@
+type: object
+properties:
+  test:
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
+  interval:
+    type: string
+  timeout:
+    type: string
+  retries:
+    type: integer
+  start_period:
+    type: string

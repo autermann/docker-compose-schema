@@ -1,0 +1,21 @@
+type: object
+properties:
+  parallelism:
+    type: integer
+  delay:
+    type: string
+  failure_action:
+    type: string
+    enum:
+      - continue
+      - pause
+      - rollback
+  monitor:
+    type: string
+  max_failure_ratio:
+    type: number
+  order:
+    type: string
+    enum:
+      - stop-first
+      - start-first
